@@ -1,7 +1,7 @@
 import { Address } from "./address";
 import { LineItems } from "./lineItems";
 
-export interface Invoice {
+export interface InvoiceProps {
   toAddress: Address,
   fromAddress: Address,
   invoiceNumber: string,

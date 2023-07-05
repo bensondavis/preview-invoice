@@ -6,13 +6,17 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
-import { testInvoice } from "../../mock-data/testInvoice";
+import { ccyFormat } from "../../functions/Numerics";
+import { LineItems } from "../../interfaces/lineItems";
 
-function ccyFormat(num: number){
-  return `${num.toFixed(2)}`;
+interface InvoiceLineItemsProps {
+  lineItems: LineItems[],
+  net: number,
+  tax: number,
+  gross: number
 }
 
-const InvoiceLineItems = () => {
+const InvoiceLineItems = ({lineItems, net, tax, gross}:InvoiceLineItemsProps) => {
   return (
     <Box sx={{width: "100%", py: 3}}>
       <TableContainer component={Paper} elevation={0}>
@@ -27,7 +31,7 @@ const InvoiceLineItems = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {testInvoice.lineItems.map((data, index) => (
+            {lineItems.map((data, index) => (
               <TableRow key={index}>
                 <TableCell>{data.name}</TableCell>
                 <TableCell align="right">{data.quantity}</TableCell>
@@ -39,15 +43,15 @@ const InvoiceLineItems = () => {
             <TableRow>
               <TableCell rowSpan={3} colSpan={2} />
               <TableCell colSpan={2}>Subtotal</TableCell>
-              <TableCell align="right">{ccyFormat(testInvoice.net)}</TableCell>
+              <TableCell align="right">{ccyFormat(net)}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell  colSpan={2}>Total TAX </TableCell>
-              <TableCell align="right">{ccyFormat(testInvoice.tax)}</TableCell>
+              <TableCell align="right">{ccyFormat(tax)}</TableCell>
             </TableRow>
             <TableRow selected>
               <TableCell  colSpan={2}><b>Amount Due EUR</b></TableCell>
-              <TableCell align="right"><b>{ccyFormat(testInvoice.gross)}</b></TableCell>
+              <TableCell align="right"><b>{ccyFormat(gross)}</b></TableCell>
             </TableRow>
           </TableBody>
         </Table>

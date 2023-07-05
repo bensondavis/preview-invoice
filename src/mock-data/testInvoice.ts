@@ -1,6 +1,13 @@
-import { Invoice } from "../interfaces/invoice";
+import { InvoiceProps } from "../interfaces/invoice";
 
-export const testInvoice: Invoice = {
+export const data = () => {
+  return new Promise((resolve, reject) => {
+    resolve(testInvoice);
+    reject("error");
+  })
+}
+
+const testInvoice: InvoiceProps = {
   toAddress: {
     name: "Alteos GmbH",
     place: "Tauentzienstraße 7 b/c",
@@ -17,8 +24,8 @@ export const testInvoice: Invoice = {
   },
   invoiceNumber: "NDCDK0000154",
   reference: "5C42D66DE - BETALT",
-  issued: new Date(),
-  due: 10,
+  issued: new Date("2023-03-29"),
+  due: 12,
   net: 2944.0,
   tax: 736.0,
   gross: 3680.00,

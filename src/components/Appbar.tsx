@@ -2,6 +2,7 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
+import { ccyFormat } from "../functions/Numerics";
 
 interface AppbarProps {
   amount: number;
@@ -21,16 +22,27 @@ const Appbar = ({ amount, due }: AppbarProps) => {
         left: 0,
       }}
     >
-      <Stack direction={"column"} alignItems={"flex-start"} sx={{ml: 3, mt: 1}}>
+      <Stack
+        direction={"column"}
+        alignItems={"flex-start"}
+        sx={{
+          ml: 2,
+          position: "relative",
+          top: "50%",
+          transform: "translateY(-50%)",
+        }}
+      >
         <Stack direction={"row"} alignItems={"center"} spacing={1}>
           <Typography variant="h5" fontSize={30} fontWeight={700}>
-            {amount}
+            {ccyFormat(amount)}
           </Typography>
-          <Typography color={"gray"}>EUR</Typography>
+          <Typography fontWeight={600} color={"gray"}>EUR</Typography>
         </Stack>
-        <Typography color={"red"} fontWeight={600} variant="caption">
-          {due} DAYS DUE
-        </Typography>
+        {due && due > 0 ? (
+          <Typography color={"red"} fontWeight={600} variant="caption">
+            {due} DAYS OVERDUE
+          </Typography>
+        ) : null}
       </Stack>
     </Box>
   );
