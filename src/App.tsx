@@ -55,9 +55,11 @@ function App() {
   });
 
   useEffect(() => {
+
+    //replace with your api request and save the response to setInvoice
     data().then((res) => {
       setInvoice(res);
-    });
+    })
   }, []);
 
   return (
