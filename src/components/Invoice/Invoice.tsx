@@ -10,7 +10,7 @@ const Invoice = ({ invoiceData }: { invoiceData: InvoiceProps }) => {
     <Box
       sx={{
         mt: "130px",
-        width: { xs: "calc(100% - 2px)", sm: "90%", md: "80%" },
+        width: { xs: "calc(100% - 2px)", sm: "90%", md: "65%" },
         mx: "auto",
         backgroundColor: "white",
         border: "1px solid #BFC8D1",

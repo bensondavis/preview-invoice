@@ -20,7 +20,7 @@ const InvoiceLineItems = ({lineItems, net, tax, gross}:InvoiceLineItemsProps) =>
   return (
     <Box sx={{width: "100%", py: 3}}>
       <TableContainer component={Paper} elevation={0}>
-        <Table sx={{ maxWidth: 700, mx: "auto" }}>
+        <Table sx={{ maxWidth: {md: "calc(100% - 100px)", sm: 700}, mx: "auto" }}>
           <TableHead>
             <TableRow>
               <TableCell><b>Description</b></TableCell>
