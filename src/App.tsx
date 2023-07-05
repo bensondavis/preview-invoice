@@ -2,7 +2,7 @@ import "./App.css";
 import Appbar from "./components/Appbar";
 import Invoice from "./components/Invoice/Invoice";
 import Box from "@mui/material/Box";
-import logos from "./config/logoConfig";
+import Logos from "./config/logoConfig";
 import {
   calculateDueDate,
   calculateOverDueDays,
@@ -70,10 +70,10 @@ function App() {
       />
       <Invoice invoiceData={invoice} />
 
-      <a href="#your-company-name">
+      <a href={Logos.companyLogo.link}>
         <Box
           component={"img"}
-          src={logos.companyLogo}
+          src={Logos.companyLogo.img}
           alt="logo"
           width={200}
           sx={{ ml: "calc(50% - 100px)", my: 9 }}
