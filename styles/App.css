@@ -1,0 +1,17 @@
+.App {
+  background-color: #F5F9FF;
+  min-height: 100vh;
+  width: 100%;
+  position: absolute;
+}
+
+body {
+  margin: 0;
+  max-width: 100vw;
+}
+
+.div-x-center {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}

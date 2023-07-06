@@ -1,17 +1,16 @@
-import "./App.css";
-import Appbar from "./components/Appbar";
-import Invoice from "./components/Invoice/Invoice";
+import React from "react";
+import Appbar from "../components/Appbar";
+import Invoice from "../components/Invoice/Invoice";
 import Box from "@mui/material/Box";
-import Logos from "./config/logoConfig";
+import Logos from "../config/logoConfig";
 import {
   calculateDueDate,
   calculateOverDueDays,
-} from "./functions/DateFunctions";
+} from "../functions/DateFunctions";
 import { useEffect, useState } from "react";
-import { InvoiceProps } from "./interfaces/invoice";
-import { data } from "./mock-data/testInvoice";
-import { ThemeProvider } from "@mui/material/styles";
-import theme from "./customisation/theme";
+import { InvoiceProps } from "../interfaces/invoice";
+import { data } from "../mock-data/testInvoice";
+import Image from "next/image";
 
 function App() {
   const [invoice, setInvoice] = useState<InvoiceProps | any>({
@@ -64,27 +63,25 @@ function App() {
   }, []);
 
   return (
-    <ThemeProvider theme={theme}>
-      <div className="App">
-        <Appbar
-          amount={invoice.gross}
-          due={calculateOverDueDays(
-            calculateDueDate(invoice.issued, invoice.due)
-          )}
-        />
-        <Invoice invoiceData={invoice} />
+    <div className="App">
+      <Appbar
+        amount={invoice.gross}
+        due={calculateOverDueDays(
+          calculateDueDate(invoice.issued, invoice.due)
+        )}
+      />
+      <Invoice invoiceData={invoice} />
 
-        <a href={Logos.companyLogo.link}>
-          <Box
-            component={"img"}
-            src={Logos.companyLogo.img}
-            alt="logo"
-            width={200}
-            sx={{ ml: "calc(50% - 100px)", my: 9 }}
-          />
+      <Box sx={{ my: 5 }}>
+        <a
+          href={Logos.companyLogo.link}
+          className={"div-x-center"}
+          // style={{ marginLeft: "calc(50% - 100px)" }}
+        >
+          <Image src={Logos.companyLogo.img} alt="logo" />
         </a>
-      </div>
-    </ThemeProvider>
+      </Box>
+    </div>
   );
 }
 
