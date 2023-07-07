@@ -11,54 +11,57 @@ import { useEffect, useState } from "react";
 import { InvoiceProps } from "../interfaces/invoice";
 import { data } from "../mock-data/testInvoice";
 import Image from "next/image";
+import isInvoice from "../functions/isInvoice"
+
+const emptyData = {
+  toAddress: {
+    name: "",
+    place: "",
+    state: "",
+    zipCode: "",
+    country: "",
+  },
+  fromAddress: {
+    name: "",
+    place: "",
+    state: "",
+    zipCode: "",
+    country: "",
+  },
+  invoiceNumber: "",
+  reference: "",
+  issued: new Date(),
+  due: 0,
+  net: 0,
+  tax: 0,
+  gross: 0,
+  lineItems: [
+    {
+      name: "",
+      quantity: 0,
+      unitPrice: 0,
+      tax: 0,
+      amount: 0,
+    },
+    {
+      name: "",
+      quantity: 0,
+      unitPrice: 0,
+      tax: 0,
+      amount: 0,
+    },
+  ],
+  paymentLink: "",
+  pdfDownloadLink: "",
+};
 
 function App() {
-  const [invoice, setInvoice] = useState<InvoiceProps | any>({
-    toAddress: {
-      name: "",
-      place: "",
-      state: "",
-      zipCode: "",
-      country: "",
-    },
-    fromAddress: {
-      name: "",
-      place: "",
-      state: "",
-      zipCode: "",
-      country: "",
-    },
-    invoiceNumber: "",
-    reference: "",
-    issued: new Date(),
-    due: 0,
-    net: 0,
-    tax: 0,
-    gross: 0,
-    lineItems: [
-      {
-        name: "",
-        quantity: 0,
-        unitPrice: 0,
-        tax: 0,
-        amount: 0,
-      },
-      {
-        name: "",
-        quantity: 0,
-        unitPrice: 0,
-        tax: 0,
-        amount: 0,
-      },
-    ],
-    paymentLink: "",
-    pdfDownloadLink: "",
-  });
+  const [invoice, setInvoice] = useState<InvoiceProps>(emptyData);
 
   useEffect(() => {
     //replace with your api request and save the response to setInvoice
     data().then((res) => {
-      setInvoice(res);
+      setInvoice(isInvoice(res) ? res : emptyData);
     });
   }, []);
 

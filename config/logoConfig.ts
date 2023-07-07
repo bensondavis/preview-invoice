@@ -1,5 +1,5 @@
-import fromLogo from "../Assets/logoipsum-286.svg";
-import companyLogo from "../Assets/logoipsum-253.svg";
+const fromLogo = require("../Assets/logoipsum-286.svg") as string
+const companyLogo = require("../Assets/logoipsum-253.svg") as string
 import { logos } from "../interfaces/logos";
 
 const Logos:logos = {

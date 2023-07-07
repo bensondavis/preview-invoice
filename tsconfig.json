@@ -27,8 +27,8 @@
     ]
   },
   "include": [
-    "src",
-    ".next/types/**/*.ts"
+    "pages",
+    ".next/types/**/*.ts","next-env.d.ts", "**/*.ts", "**/*.tsx"
   ],
   "exclude": [
     "node_modules"
