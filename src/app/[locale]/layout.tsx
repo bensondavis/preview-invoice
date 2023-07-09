@@ -30,7 +30,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
-      <link rel='icon' href='/favicon.ico'/>
+      <link rel='icon' type="image/png" href='/logo192.png' />
       </head>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
