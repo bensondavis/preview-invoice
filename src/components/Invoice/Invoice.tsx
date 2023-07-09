@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Box, Divider } from "@mui/material";
 import InvoiceHeader from "./InvoiceHeader";
@@ -15,7 +17,6 @@ const Invoice = ({ invoiceData }: { invoiceData: InvoiceProps }) => {
         mx: "auto",
         backgroundColor: "white",
         border: "1px solid #BFC8D1",
-        mb: 4,
       }}
     >
       <InvoiceHeader />
@@ -36,7 +37,7 @@ const Invoice = ({ invoiceData }: { invoiceData: InvoiceProps }) => {
         gross={invoiceData.gross}
       />
       <Divider />
-      <InvoiceFooter companyName={invoiceData.toAddress.name} />
+      <InvoiceFooter companyName={invoiceData.toAddress[0].name} />
     </Box>
   );
 };

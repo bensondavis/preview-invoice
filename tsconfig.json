@@ -24,10 +24,13 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": [
-    "pages",
+    "src/app",
     ".next/types/**/*.ts","next-env.d.ts", "**/*.ts", "**/*.tsx"
   ],
   "exclude": [

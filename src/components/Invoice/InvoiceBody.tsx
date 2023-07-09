@@ -7,7 +7,7 @@ import { Address } from "../../interfaces/address";
 import { calculateDueDate, calculateOverDueDays } from "../../functions/DateFunctions";
 
 interface InvoiceBodyProps {
-  toAddress: Address;
+  toAddress: Address[];
   fromAddress: Address;
   invoiceNumber: string;
   reference: string;
@@ -34,7 +34,7 @@ const InvoiceBody = ({
     >
       <Grid container spacing={3} sx={{ width: "100%" }}>
         <Grid item xs={12}>
-          <InvoiceAddress title="To" address={toAddress} />
+          <InvoiceAddress title="To" addresses={toAddress} />
         </Grid>
         <Grid item xs={12}>
           <InvoiceData title="Invoice Number" value={invoiceNumber} />

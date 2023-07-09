@@ -1,0 +1,21 @@
+{
+  "Invoice": {
+    "To": "To",
+    "From": "From",
+    "Invoice Number" : "Invoice Number",
+    "Reference": "Reference",
+    "Issued": "Issued",
+    "Due": "Due",
+    "Description": "Description",
+    "Quantity": "Quantity",
+    "Unit Price": "Unit Price",
+    "TAX": "TAX",
+    "Amount": "Amount",
+    "TAX INVOICE": "TAX INVOICE",
+    "days": "Days",
+    "overdue": "overdue",
+    "Subtotal": "Subtotal",
+    "Total": "Total",
+    "Amount Due": "Amount Due"
+  }
+}

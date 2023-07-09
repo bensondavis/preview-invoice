@@ -4,17 +4,26 @@ export const data = () => {
   return new Promise((resolve, reject) => {
     resolve(testInvoice);
     reject("error");
-  })
-}
+  });
+};
 
 const testInvoice: InvoiceProps = {
-  toAddress: {
-    name: "Alteos GmbH",
-    place: "Tauentzienstraße 7 b/c",
-    state: "Berlin",
-    zipCode: "10789",
-    country: "GERMANY",
-  },
+  toAddress: [
+    {
+      name: "Alteos GmbH",
+      place: "Tauentzienstraße 7 b/c",
+      state: "Berlin",
+      zipCode: "10789",
+      country: "GERMANY",
+    },
+    {
+      name: "Alteos GmbH",
+      place: "Tauentzienstraße 7 b/c",
+      state: "Berlin",
+      zipCode: "10789",
+      country: "GERMANY",
+    },
+  ],
   fromAddress: {
     name: "Alteos GmbH",
     place: "Tauentzienstraße 7 b/c",
@@ -28,7 +37,7 @@ const testInvoice: InvoiceProps = {
   due: 12,
   net: 2944.0,
   tax: 736.0,
-  gross: 3680.00,
+  gross: 3680.0,
   lineItems: [
     {
       name: "2-Day Workshop Pass w. Hotel - Early Bird",
@@ -46,5 +55,5 @@ const testInvoice: InvoiceProps = {
     },
   ],
   paymentLink: "google.com",
-  pdfDownloadLink: "google.com"
+  pdfDownloadLink: "google.com",
 };

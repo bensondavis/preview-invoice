@@ -8,6 +8,7 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import { ccyFormat } from "../../functions/Numerics";
 import { LineItems } from "../../interfaces/lineItems";
+import {useTranslations} from 'next-intl';
 
 interface InvoiceLineItemsProps {
   lineItems: LineItems[],
@@ -17,17 +18,19 @@ interface InvoiceLineItemsProps {
 }
 
 const InvoiceLineItems = ({lineItems, net, tax, gross}:InvoiceLineItemsProps) => {
+  const t = useTranslations('Invoice');
+
   return (
     <Box sx={{width: "100%", py: 3}}>
       <TableContainer component={Paper} elevation={0}>
         <Table sx={{ maxWidth: {md: "calc(100% - 100px)", sm: 700}, mx: "auto" }}>
           <TableHead>
             <TableRow>
-              <TableCell><b>Description</b></TableCell>
-              <TableCell align="right"><b>Quantity</b></TableCell>
-              <TableCell align="right"><b>Unit Price</b></TableCell>
-              <TableCell align="right"><b>TAX</b></TableCell>
-              <TableCell align="right"><b>Amount EUR</b></TableCell>
+              <TableCell><b>{t("Description")}</b></TableCell>
+              <TableCell align="right"><b>{t("Quantity")}</b></TableCell>
+              <TableCell align="right"><b>{t("Unit Price")}</b></TableCell>
+              <TableCell align="right"><b>{t("TAX")}</b></TableCell>
+              <TableCell align="right"><b>{t("Amount")} EUR</b></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -42,15 +45,15 @@ const InvoiceLineItems = ({lineItems, net, tax, gross}:InvoiceLineItemsProps) =>
             ))}
             <TableRow>
               <TableCell rowSpan={3} colSpan={2} />
-              <TableCell colSpan={2}>Subtotal</TableCell>
+              <TableCell colSpan={2}>{t("Subtotal")}</TableCell>
               <TableCell align="right">{ccyFormat(net)}</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell  colSpan={2}>Total TAX </TableCell>
+              <TableCell  colSpan={2}>{t("Total")} {t("TAX")} </TableCell>
               <TableCell align="right">{ccyFormat(tax)}</TableCell>
             </TableRow>
             <TableRow selected>
-              <TableCell  colSpan={2}><b>Amount Due EUR</b></TableCell>
+              <TableCell  colSpan={2}><b>{t("Amount Due")} EUR</b></TableCell>
               <TableCell align="right"><b>{ccyFormat(gross)}</b></TableCell>
             </TableRow>
           </TableBody>

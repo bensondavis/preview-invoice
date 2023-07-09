@@ -3,8 +3,11 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Logos from "../../config/logoConfig";
 import Image from 'next/image'
+import {useTranslations} from 'next-intl';
 
 const InvoiceHeader = () => {
+  const t = useTranslations('Invoice');
+
   return (
     <Stack
       direction={"row"}
@@ -14,12 +17,12 @@ const InvoiceHeader = () => {
       sx={{ width: "100%", py: 4 }}
     >
       <Typography
-        variant="h5"
-        fontSize={{ xs: "18px", sm: "20px", md: "24px" }}
+        variant="h2"
+        fontSize={"18px"}
         fontWeight={700}
         sx={{ml: 3}}
       >
-        TAX INVOICE
+        {t("TAX INVOICE")}
       </Typography>
 
       <a href={Logos.fromCompanyLogo.link} style={{ width: "auto", marginRight: 30 }}>

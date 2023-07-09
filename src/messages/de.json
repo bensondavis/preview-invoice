@@ -1,0 +1,21 @@
+{
+  "Invoice": {
+    "To": "Zu",
+    "From": "Aus",
+    "Invoice Number" : "Rechnungsnummer",
+    "Reference": "Referenz",
+    "Issued": "Ausgegeben",
+    "Due": "Fällig",
+    "Description": "Beschreibung",
+    "Quantity": "Menge",
+    "Unit Price": "Einzelpreis",
+    "TAX": "STEUER",
+    "Amount": "Menge",
+    "TAX INVOICE": "Steuerrechnung",
+    "days": "Tage",
+    "overdue": "überfällig",
+    "Subtotal": "Zwischensumme",
+    "Total": "Gesamt",
+    "Amount Due": "Offener Betrag"
+  }
+}

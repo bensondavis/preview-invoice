@@ -1,26 +1,32 @@
+"use client";
+
 import React from "react";
-import Appbar from "../components/Appbar";
-import Invoice from "../components/Invoice/Invoice";
-import Box from "@mui/material/Box";
-import Logos from "../config/logoConfig";
+import Appbar from "../../components/Appbar";
+import Invoice from "../../components/Invoice/Invoice";
+import Logos from "../../config/logoConfig";
 import {
   calculateDueDate,
   calculateOverDueDays,
-} from "../functions/DateFunctions";
+} from "../../functions/DateFunctions";
 import { useEffect, useState } from "react";
-import { InvoiceProps } from "../interfaces/invoice";
-import { data } from "../mock-data/testInvoice";
+import { InvoiceProps } from "../../interfaces/invoice";
+import { data } from "../../mock-data/testInvoice";
 import Image from "next/image";
-import isInvoice from "../functions/isInvoice"
+import isInvoice from "../../functions/isInvoice";
+import { Stack } from "@mui/material";
+import styles from "../../styles/App.module.css";
+import { useTranslations } from "next-intl";
 
 const emptyData = {
-  toAddress: {
-    name: "",
-    place: "",
-    state: "",
-    zipCode: "",
-    country: "",
-  },
+  toAddress: [
+    {
+      name: "",
+      place: "",
+      state: "",
+      zipCode: "",
+      country: "",
+    },
+  ],
   fromAddress: {
     name: "",
     place: "",
@@ -57,6 +63,7 @@ const emptyData = {
 
 function App() {
   const [invoice, setInvoice] = useState<InvoiceProps>(emptyData);
+  const t = useTranslations("Invoice");
 
   useEffect(() => {
     //replace with your api request and save the response to setInvoice
@@ -66,7 +73,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className={styles.App}>
       <Appbar
         amount={invoice.gross}
         due={calculateOverDueDays(
@@ -75,15 +82,15 @@ function App() {
       />
       <Invoice invoiceData={invoice} />
 
-      <Box sx={{ my: 5 }}>
-        <a
-          href={Logos.companyLogo.link}
-          className={"div-x-center"}
-          // style={{ marginLeft: "calc(50% - 100px)" }}
-        >
+      <Stack
+        className={styles.footer}
+        alignItems={"center"}
+        justifyContent={"center"}
+      >
+        <a href={Logos.companyLogo.link} className={"img-link"}>
           <Image src={Logos.companyLogo.img} alt="logo" />
         </a>
-      </Box>
+      </Stack>
     </div>
   );
 }
