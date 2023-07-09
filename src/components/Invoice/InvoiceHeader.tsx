@@ -6,7 +6,7 @@ import Image from 'next/image'
 import {useTranslations} from 'next-intl';
 
 const InvoiceHeader = () => {
-  const t = useTranslations('Invoice');
+  const i18n = useTranslations('Invoice');
 
   return (
     <Stack
@@ -22,7 +22,7 @@ const InvoiceHeader = () => {
         fontWeight={700}
         sx={{ml: 3}}
       >
-        {t("TAX INVOICE")}
+        {i18n("TAX INVOICE")}
       </Typography>
 
       <a href={Logos.fromCompanyLogo.link} style={{ width: "auto", marginRight: 30 }}>

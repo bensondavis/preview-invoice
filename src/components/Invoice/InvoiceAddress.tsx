@@ -11,7 +11,7 @@ interface InvoiceAddressProps {
 }
 
 const InvoiceAddress = ({ title, address, addresses }: InvoiceAddressProps) => {
-  const t = useTranslations('Invoice');
+  const i18n = useTranslations('Invoice');
   const AddressData = addresses ? addresses : [address];
   
   return (
@@ -20,7 +20,7 @@ const InvoiceAddress = ({ title, address, addresses }: InvoiceAddressProps) => {
         <React.Fragment key={index}>
           <Grid item xs={6}>
             <Typography className="details" sx={{ ml: 4 }}>
-              <b>{index === 0 ? t(title) : ""}</b>
+              <b>{index === 0 ? i18n(title) : ""}</b>
             </Typography>
           </Grid>
           <Grid item xs={6}>

@@ -22,7 +22,7 @@ interface AppbarProps {
 }
 
 const Appbar = ({ amount, due }: AppbarProps) => {
-  const t = useTranslations("Invoice");
+  const i18n = useTranslations("Invoice");
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -48,7 +48,7 @@ const Appbar = ({ amount, due }: AppbarProps) => {
         </Stack>
         {due && due > 0 ? (
           <Typography color={"red"} fontWeight={600} variant="caption">
-            {due} {t("days")} {t("overdue")}
+            {due} {i18n("days")} {i18n("overdue")}
           </Typography>
         ) : null}
       </Stack>

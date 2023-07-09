@@ -10,13 +10,13 @@ interface InvoiceDataProps {
 }
 
 const InvoiceData = ({ title, value, overDue }: InvoiceDataProps) => {
-  const t = useTranslations('Invoice');
+  const i18n = useTranslations('Invoice');
 
   return (
     <Grid container spacing={1} sx={{ textAlign: "left" }}>
       <Grid item xs={6}>
         <Typography className="details" sx={{ ml: 4 }}>
-          <b>{t(title)}</b>
+          <b>{i18n(title)}</b>
         </Typography>
       </Grid>
       <Grid item xs={6}>
@@ -35,7 +35,7 @@ const InvoiceData = ({ title, value, overDue }: InvoiceDataProps) => {
             fontWeight={600}
             color={"red"}
           >
-            {overDue} {t("days")} {t("overdue")}
+            {overDue} {i18n("days")} {i18n("overdue")}
           </Typography>
         ) : null}
       </Grid>

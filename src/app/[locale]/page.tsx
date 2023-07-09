@@ -15,7 +15,6 @@ import Image from "next/image";
 import isInvoice from "../../utils/isInvoice";
 import { Stack } from "@mui/material";
 import styles from "../../styles/App.module.css";
-import { useTranslations } from "next-intl";
 
 const emptyData = {
   toAddress: [
@@ -63,7 +62,7 @@ const emptyData = {
 
 function App() {
   const [invoice, setInvoice] = useState<InvoiceProps>(emptyData);
-  const t = useTranslations("Invoice");
+
 
   useEffect(() => {
     //replace with your api request and save the response to setInvoice

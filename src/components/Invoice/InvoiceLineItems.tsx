@@ -18,7 +18,7 @@ interface InvoiceLineItemsProps {
 }
 
 const InvoiceLineItems = ({lineItems, net, tax, gross}:InvoiceLineItemsProps) => {
-  const t = useTranslations('Invoice');
+  const i18n = useTranslations('Invoice');
 
   return (
     <Box sx={{width: "100%", py: 3}}>
@@ -26,11 +26,11 @@ const InvoiceLineItems = ({lineItems, net, tax, gross}:InvoiceLineItemsProps) =>
         <Table sx={{ maxWidth: {md: "calc(100% - 100px)", sm: 700}, mx: "auto" }}>
           <TableHead>
             <TableRow>
-              <TableCell><b>{t("Description")}</b></TableCell>
-              <TableCell align="right"><b>{t("Quantity")}</b></TableCell>
-              <TableCell align="right"><b>{t("Unit Price")}</b></TableCell>
-              <TableCell align="right"><b>{t("TAX")}</b></TableCell>
-              <TableCell align="right"><b>{t("Amount")} EUR</b></TableCell>
+              <TableCell><b>{i18n("Description")}</b></TableCell>
+              <TableCell align="right"><b>{i18n("Quantity")}</b></TableCell>
+              <TableCell align="right"><b>{i18n("Unit Price")}</b></TableCell>
+              <TableCell align="right"><b>{i18n("TAX")}</b></TableCell>
+              <TableCell align="right"><b>{i18n("Amount")} EUR</b></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -45,15 +45,15 @@ const InvoiceLineItems = ({lineItems, net, tax, gross}:InvoiceLineItemsProps) =>
             ))}
             <TableRow>
               <TableCell rowSpan={3} colSpan={2} />
-              <TableCell colSpan={2}>{t("Subtotal")}</TableCell>
+              <TableCell colSpan={2}>{i18n("Subtotal")}</TableCell>
               <TableCell align="right">{ccyFormat(net)}</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell  colSpan={2}>{t("Total")} {t("TAX")} </TableCell>
+              <TableCell  colSpan={2}>{i18n("Total")} {i18n("TAX")} </TableCell>
               <TableCell align="right">{ccyFormat(tax)}</TableCell>
             </TableRow>
             <TableRow selected>
-              <TableCell  colSpan={2}><b>{t("Amount Due")} EUR</b></TableCell>
+              <TableCell  colSpan={2}><b>{i18n("Amount Due")} EUR</b></TableCell>
               <TableCell align="right"><b>{ccyFormat(gross)}</b></TableCell>
             </TableRow>
           </TableBody>
