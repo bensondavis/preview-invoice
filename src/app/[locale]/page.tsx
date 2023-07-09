@@ -7,12 +7,12 @@ import Logos from "../../config/logoConfig";
 import {
   calculateDueDate,
   calculateOverDueDays,
-} from "../../functions/DateFunctions";
+} from "../../utils/DateFunctions";
 import { useEffect, useState } from "react";
 import { InvoiceProps } from "../../interfaces/invoice";
 import { data } from "../../mock-data/testInvoice";
 import Image from "next/image";
-import isInvoice from "../../functions/isInvoice";
+import isInvoice from "../../utils/isInvoice";
 import { Stack } from "@mui/material";
 import styles from "../../styles/App.module.css";
 import { useTranslations } from "next-intl";

@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
-import { ccyFormat } from "../functions/Numerics";
+import { ccyFormat } from "../utils/Numerics";
 import { useTranslations } from "next-intl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";

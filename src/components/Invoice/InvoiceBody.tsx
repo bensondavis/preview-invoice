@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 import InvoiceAddress from "./InvoiceAddress";
 import InvoiceData from "./InvoiceData";
 import { Address } from "../../interfaces/address";
-import { calculateDueDate, calculateOverDueDays } from "../../functions/DateFunctions";
+import { calculateDueDate, calculateOverDueDays } from "../../utils/DateFunctions";
 
 interface InvoiceBodyProps {
   toAddress: Address[];
