@@ -39,17 +39,16 @@ const Appbar = ({ amount, due }: AppbarProps) => {
         className={styles.centerY}
       >
         <Stack direction={"row"} alignItems={"center"} spacing={1}>
-          <Typography variant="h5" fontSize={30} fontWeight={700}>
-            {ccyFormat(amount)}
-          </Typography>
-          <Typography fontWeight={600} color={"gray"}>
-            EUR
-          </Typography>
+          <Typography className={styles.total}>{ccyFormat(amount)}</Typography>
+          <Typography className={styles.currency}>EUR</Typography>
         </Stack>
+
         {due && due > 0 ? (
-          <Typography color={"red"} fontWeight={600} variant="caption">
-            {due} {i18n("days")} {i18n("overdue")}
-          </Typography>
+          <Box sx={{ height: "12px" }}>
+            <Typography color={"error"} className={styles.due}>
+              {due} {i18n("days")} {i18n("overdue")}
+            </Typography>
+          </Box>
         ) : null}
       </Stack>
       <Stack className={styles.select} direction={"row"}>

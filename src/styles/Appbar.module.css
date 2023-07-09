@@ -8,9 +8,9 @@
 }
 
 .centerY {
-  margin-left: 20px;
-  position: relative;
+  position: absolute;
   top: 50%;
+  left: 20px;
   transform: translateY(-50%);
 }
 
@@ -19,4 +19,23 @@
   top: 50%;
   right: 20px;
   transform: translateY(-50%);
+}
+
+.total {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.currency {
+  font-size: 20px;
+  color: #7e90a2;
+  font-weight: normal;
+}
+
+.due {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 0px;
+  /* margin-top: 3px; */
 }
