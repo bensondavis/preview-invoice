@@ -2,7 +2,8 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { Address } from "../../interfaces/address";
-import {useTranslations} from 'next-intl';
+import { useTranslations } from "next-intl";
+import styles from "../../styles/Invoice/InvoiceAddress.module.css";
 
 interface InvoiceAddressProps {
   title: string;
@@ -11,33 +12,33 @@ interface InvoiceAddressProps {
 }
 
 const InvoiceAddress = ({ title, address, addresses }: InvoiceAddressProps) => {
-  const i18n = useTranslations('Invoice');
+  const i18n = useTranslations("Invoice");
   const AddressData = addresses ? addresses : [address];
-  
+
   return (
-    <Grid container sx={{ textAlign: "left" }} rowSpacing={2}>
+    <Grid container className={styles.mt} rowSpacing={2}>
       {AddressData.map((data, index) => (
         <React.Fragment key={index}>
           <Grid item xs={6}>
-            <Typography className="details" sx={{ ml: 4 }}>
+            <Typography>
               <b>{index === 0 ? i18n(title) : ""}</b>
             </Typography>
           </Grid>
           <Grid item xs={6}>
             <Grid item xs={12}>
-              <Typography className="details" >{data?.name}</Typography>
+              <Typography>{data?.name}</Typography>
             </Grid>
             <Grid item xs={12}>
-              <Typography className="details">{data?.place}</Typography>
+              <Typography>{data?.place}</Typography>
             </Grid>
             <Grid item xs={12}>
-              <Typography className="details">{data?.state}</Typography>
+              <Typography>{data?.state}</Typography>
             </Grid>
             <Grid item xs={12}>
-              <Typography className="details">{data?.zipCode}</Typography>
+              <Typography>{data?.zipCode}</Typography>
             </Grid>
             <Grid item xs={12}>
-              <Typography className="details">{data?.country}</Typography>
+              <Typography>{data?.country}</Typography>
             </Grid>
           </Grid>
         </React.Fragment>

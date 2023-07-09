@@ -1,10 +1,14 @@
 import React from "react";
-import { Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import InvoiceAddress from "./InvoiceAddress";
 import InvoiceData from "./InvoiceData";
 import { Address } from "../../interfaces/address";
-import { calculateDueDate, calculateOverDueDays } from "../../utils/DateFunctions";
+import {
+  calculateDueDate,
+  calculateOverDueDays,
+} from "../../utils/DateFunctions";
+import styles from "../../styles/Invoice/InvoiceBody.module.css";
 
 interface InvoiceBodyProps {
   toAddress: Address[];
@@ -23,45 +27,45 @@ const InvoiceBody = ({
   issued,
   due,
 }: InvoiceBodyProps) => {
-
   return (
-    <Stack
-      direction={{ xs: "column", sm: "row", md: "row" }}
-      sx={{ width: "100%", mb: 3, mt: 2 }}
-      alignItems={"baseline"}
-      justifyContent={"center"}
-      spacing={1}
-    >
-      <Grid container spacing={3} sx={{ width: "100%" }}>
-        <Grid item xs={12}>
-          <InvoiceAddress title="To" addresses={toAddress} />
+    <Box className={styles.container}>
+      <Stack
+        direction={{ xs: "column", sm: "row", md: "row" }}
+        className={styles["content-box"]}
+        alignItems={"flex-start"}
+        justifyContent={"flex-start"}
+      >
+        <Grid container spacing={3} sx={{ width: "100%" }}>
+          <Grid item xs={12}>
+            <InvoiceAddress title="To" addresses={toAddress} />
+          </Grid>
+          <Grid item xs={12}>
+            <InvoiceData title="Invoice Number" value={invoiceNumber} />
+          </Grid>
+          <Grid item xs={12}>
+            <InvoiceData title="Reference" value={reference} />
+          </Grid>
+          <Grid item xs={12}>
+            <InvoiceData
+              title="Issued"
+              value={issued.toISOString().split("T")[0]}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <InvoiceData
+              title="Due"
+              value={calculateDueDate(issued, due)}
+              overDue={calculateOverDueDays(calculateDueDate(issued, due))}
+            />
+          </Grid>
         </Grid>
-        <Grid item xs={12}>
-          <InvoiceData title="Invoice Number" value={invoiceNumber} />
+        <Grid container spacing={3} sx={{ width: "100%" }}>
+          <Grid item xs={12}>
+            <InvoiceAddress title="From" address={fromAddress} />
+          </Grid>
         </Grid>
-        <Grid item xs={12}>
-          <InvoiceData title="Reference" value={reference} />
-        </Grid>
-        <Grid item xs={12}>
-          <InvoiceData
-            title="Issued"
-            value={issued.toISOString().split("T")[0]}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <InvoiceData
-            title="Due"
-            value={calculateDueDate(issued, due)}
-            overDue={calculateOverDueDays(calculateDueDate(issued, due))}
-          />
-        </Grid>
-      </Grid>
-      <Grid container spacing={3} sx={{ width: "100%" }}>
-        <Grid item xs={12}>
-          <InvoiceAddress title="From" address={fromAddress} />
-        </Grid>
-      </Grid>
-    </Stack>
+      </Stack>
+    </Box>
   );
 };
 

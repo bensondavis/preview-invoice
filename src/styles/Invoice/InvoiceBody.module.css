@@ -1,0 +1,10 @@
+.content-box {
+  width: 95%;
+
+  margin: 0 auto;
+}
+
+.container {
+  width: 100%;
+  margin-bottom: 24px;
+}

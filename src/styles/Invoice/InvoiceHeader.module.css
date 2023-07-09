@@ -1,0 +1,16 @@
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  /* margin-left: 4%; */
+}
+
+.box{
+  width: 100%;
+}
+
+.stack {
+  width: 95%;
+  margin: 0 auto;
+  padding: 32px 0;
+  
+}

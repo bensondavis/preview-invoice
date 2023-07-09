@@ -15,6 +15,8 @@ import Image from "next/image";
 import isInvoice from "../../utils/isInvoice";
 import { Stack } from "@mui/material";
 import styles from "../../styles/App.module.css";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "../../theme/theme";
 
 const emptyData = {
   toAddress: [
@@ -63,7 +65,6 @@ const emptyData = {
 function App() {
   const [invoice, setInvoice] = useState<InvoiceProps>(emptyData);
 
-
   useEffect(() => {
     //replace with your api request and save the response to setInvoice
     data().then((res) => {
@@ -72,25 +73,27 @@ function App() {
   }, []);
 
   return (
-    <div className={styles.App}>
-      <Appbar
-        amount={invoice.gross}
-        due={calculateOverDueDays(
-          calculateDueDate(invoice.issued, invoice.due)
-        )}
-      />
-      <Invoice invoiceData={invoice} />
+    <ThemeProvider theme={theme}>
+      <div className={styles.App}>
+        <Appbar
+          amount={invoice.gross}
+          due={calculateOverDueDays(
+            calculateDueDate(invoice.issued, invoice.due)
+          )}
+        />
+        <Invoice invoiceData={invoice} />
 
-      <Stack
-        className={styles.footer}
-        alignItems={"center"}
-        justifyContent={"center"}
-      >
-        <a href={Logos.companyLogo.link} className={"img-link"}>
-          <Image src={Logos.companyLogo.img} alt="logo" />
-        </a>
-      </Stack>
-    </div>
+        <Stack
+          className={styles.footer}
+          alignItems={"center"}
+          justifyContent={"center"}
+        >
+          <a href={Logos.companyLogo.link} className={"img-link"}>
+            <Image src={Logos.companyLogo.img} alt="logo" />
+          </a>
+        </Stack>
+      </div>
+    </ThemeProvider>
   );
 }
 

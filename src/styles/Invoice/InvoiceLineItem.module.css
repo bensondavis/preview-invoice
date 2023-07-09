@@ -1,0 +1,12 @@
+.align-left {
+  text-align: left;
+}
+
+.summary {
+  font-size: 24px;
+}
+
+.summary-label {
+  font-size: 14px;
+  text-align: left;
+}
