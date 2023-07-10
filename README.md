@@ -25,3 +25,6 @@ This app uses [next-intl](https://next-intl-docs.vercel.app/) routing to support
 
 - You can customize the invoice templates and styles by editing the files in the `components` and `styles` directories.
 - You can also change the `theme` of mui components in `theme/theme.ts`
+
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request if you have any ideas or suggestions.
