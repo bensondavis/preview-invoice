@@ -36,6 +36,10 @@
   text-transform: uppercase;
   font-weight: bold !important;
   font-size: 12px !important;
-  line-height: 0px;
+  line-height: 0px !important;
   /* margin-top: 3px; */
+}
+
+.due-box {
+  height: 10px;
 }

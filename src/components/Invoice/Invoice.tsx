@@ -7,17 +7,15 @@ import InvoiceBody from "./InvoiceBody";
 import InvoiceLineItems from "./InvoiceLineItems";
 import InvoiceFooter from "./InvoiceFooter";
 import { InvoiceProps } from "../../interfaces/invoice";
+import styles from "../../styles/Invoice/Invoice.module.css"
 
 const Invoice = ({ invoiceData }: { invoiceData: InvoiceProps }) => {
   return (
     <Box
       sx={{
-        mt: "130px",
-        width: { xs: "calc(100% - 2px)", sm: "90%", md: "65%" },
-        mx: "auto",
-        backgroundColor: "white",
-        border: "1px solid #BFC8D1",
+        width: { xs: "calc(100% - 2px)", sm: "90%", md: "80%" },
       }}
+      className={styles.container}
     >
       <InvoiceHeader />
       <Divider />

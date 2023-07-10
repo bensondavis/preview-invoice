@@ -44,7 +44,7 @@ const Appbar = ({ amount, due }: AppbarProps) => {
         </Stack>
 
         {due && due > 0 ? (
-          <Box sx={{ height: "12px" }}>
+          <Box className={styles["due-box"]}>
             <Typography color={"error"} className={styles.due}>
               {due} {i18n("days")} {i18n("overdue")}
             </Typography>

@@ -1,8 +1,10 @@
 .details {
   font-size: 13px;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  
 }
 
 body {
   font-size: 13px;
+  background-color: #F5F9FF;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }

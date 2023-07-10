@@ -32,7 +32,6 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           textAlign: "left",
-          paddingTop: 0
         }
       }
     }
