@@ -9,9 +9,8 @@ interface PdfBtnProps {
 
 const PdfBtn = ({ link }: PdfBtnProps) => {
   return (
-    <Link href={link}>
+    <Link className={styles.btn} href={link}>
       <Button
-        className={styles.btn}
         startIcon={<DownloadIcon />}
         variant="outlined"
         color="primary"

@@ -54,6 +54,6 @@ const testInvoice: InvoiceProps = {
       amount: 2930.0,
     },
   ],
-  paymentLink: "google.com",
-  pdfDownloadLink: "google.com",
+  paymentLink: "https://www.google.com/",
+  pdfDownloadLink: "https://www.google.com/",
 };
