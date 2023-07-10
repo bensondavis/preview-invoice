@@ -80,6 +80,7 @@ function App() {
           due={calculateOverDueDays(
             calculateDueDate(invoice.issued, invoice.due)
           )}
+          pdfLink={invoice.pdfDownloadLink}
         />
         <Invoice invoiceData={invoice} />
 

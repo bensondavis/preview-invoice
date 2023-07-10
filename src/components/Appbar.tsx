@@ -8,28 +8,17 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import { ccyFormat } from "../utils/Numerics";
 import { useTranslations } from "next-intl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import { useRouter } from "next/navigation";
-import { useLocale } from "next-intl";
-import { usePathname } from "next-intl/client";
-import LanguageIcon from "@mui/icons-material/Language";
+import Localization from "./Localization";
+import PdfBtn from "./PdfBtn";
 
 interface AppbarProps {
   amount: number;
   due: number;
+  pdfLink: string;
 }
 
-const Appbar = ({ amount, due }: AppbarProps) => {
+const Appbar = ({ amount, due, pdfLink }: AppbarProps) => {
   const i18n = useTranslations("Invoice");
-  const locale = useLocale();
-  const router = useRouter();
-  const pathname = usePathname();
-
-  const handleChange = (event: SelectChangeEvent) => {
-    router.replace(`/${event.target.value}${pathname}`);
-  };
 
   return (
     <Box component={Paper} elevation={2} className={styles.Appbar}>
@@ -51,15 +40,8 @@ const Appbar = ({ amount, due }: AppbarProps) => {
           </Box>
         ) : null}
       </Stack>
-      <Stack className={styles.select} direction={"row"}>
-        <LanguageIcon />
-        <FormControl variant="standard" size="small">
-          <Select defaultValue={locale} onChange={handleChange}>
-            <MenuItem value={"en"}>EN</MenuItem>
-            <MenuItem value={"de"}>DE</MenuItem>
-          </Select>
-        </FormControl>
-      </Stack>
+      <PdfBtn link={pdfLink} />
+      <Localization />
     </Box>
   );
 };

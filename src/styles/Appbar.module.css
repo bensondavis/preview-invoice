@@ -14,13 +14,6 @@
   transform: translateY(-50%);
 }
 
-.select {
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-}
-
 .total {
   font-size: 26px !important;
   font-weight: bold !important;
