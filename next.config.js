@@ -2,7 +2,7 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  distDir: "build"
+  // distDir: "build"
   // output: 'export',
   // Optional: Add a trailing slash to all paths `/about` -> `/about/`
   // trailingSlash: true,
