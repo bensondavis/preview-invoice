@@ -22,20 +22,20 @@
 }
 
 .total {
-  font-size: 26px;
-  font-weight: bold;
+  font-size: 26px !important;
+  font-weight: bold !important;
 }
 
 .currency {
-  font-size: 20px;
+  font-size: 20px !important;
   color: #7e90a2;
-  font-weight: normal;
+  font-weight: normal !important;
 }
 
 .due {
   text-transform: uppercase;
-  font-weight: bold;
-  font-size: 12px;
+  font-weight: bold !important;
+  font-size: 12px !important;
   line-height: 0px;
   /* margin-top: 3px; */
 }

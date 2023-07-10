@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import styles from "./Appbar.module.css";
+import styles from "../styles/Appbar.module.css";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
