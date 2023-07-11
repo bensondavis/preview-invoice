@@ -13,7 +13,7 @@ const Invoice = ({ invoiceData }: { invoiceData: InvoiceProps }) => {
   return (
     <Box
       sx={{
-        width: { xs: "calc(100% - 2px)", sm: "90%", md: "80%" },
+        width: { xs: "calc(100% - 2px)", sm: "93%", md: "85%" },
       }}
       className={styles.container}
     >

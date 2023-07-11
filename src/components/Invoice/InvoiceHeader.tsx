@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import styles from "../../styles/Invoice/InvoiceHeader.module.css";
 import { Box } from "@mui/material";
+import Link from "next/link";
 
 const InvoiceHeader = () => {
   const i18n = useTranslations("Invoice");
@@ -21,11 +22,11 @@ const InvoiceHeader = () => {
       >
         <Typography className={styles.title}>{i18n("TAX INVOICE")}</Typography>
 
-        <a
+        <Link
           href={Logos.fromCompanyLogo.link}
         >
           <Image src={Logos.fromCompanyLogo.img} alt="logo" />
-        </a>
+        </Link>
       </Stack>
     </Box>
   );

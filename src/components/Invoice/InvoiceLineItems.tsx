@@ -28,10 +28,8 @@ const InvoiceLineItems = ({
 
   return (
     <Box sx={{ width: "100%", py: 3 }}>
-      <TableContainer component={Paper} elevation={0} >
-        <Table
-          sx={{ width: { md: "95%", xs: "100%", sm: "95%" }, mx: "auto" }}
-        >
+      <TableContainer component={Paper} elevation={0}>
+        <Table sx={{ width: { md: "95%", xs: "100%", sm: "95%" }, mx: "auto" }}>
           <TableHead>
             <TableRow>
               <TableCell className={styles["align-left"]}>
@@ -59,14 +57,18 @@ const InvoiceLineItems = ({
                 </TableCell>
                 <TableCell>{data.quantity}</TableCell>
                 <TableCell>{data.unitPrice}</TableCell>
-                <TableCell >{data.tax}%</TableCell>
+                <TableCell>{data.tax}%</TableCell>
                 <TableCell>
                   <b>{ccyFormat(data.amount)}</b>
                 </TableCell>
               </TableRow>
             ))}
             <TableRow>
-              <TableCell rowSpan={3} colSpan={3} />
+              <TableCell
+                rowSpan={3}
+                colSpan={3}
+                className={styles["bb-none"]}
+              />
               <TableCell className={styles["align-left"]} colSpan={1}>
                 {i18n("Subtotal")}
               </TableCell>

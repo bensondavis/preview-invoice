@@ -32,7 +32,7 @@ export default async function LocaleLayout({
       <head>
       <link rel='icon' type="image/png" href='/logo192.png' />
       </head>
-      <body>
+      <body suppressHydrationWarning={true}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>
