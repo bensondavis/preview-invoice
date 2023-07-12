@@ -23,13 +23,6 @@ const testInvoice: InvoiceProps = {
       zipCode: "10789",
       country: "GERMANY",
     },
-    {
-      name: "Alteos GmbH",
-      place: "Tauentzienstraße 7 b/c",
-      state: "Berlin",
-      zipCode: "10789",
-      country: "GERMANY",
-    },
   ],
   fromAddress: {
     name: "Alteos GmbH",
