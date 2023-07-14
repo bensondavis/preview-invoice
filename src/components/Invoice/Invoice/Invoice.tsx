@@ -2,12 +2,12 @@
 
 import React from "react";
 import { Box, Divider } from "@mui/material";
-import InvoiceHeader from "./InvoiceHeader";
-import InvoiceBody from "./InvoiceBody";
-import InvoiceLineItems from "./InvoiceLineItems";
-import InvoiceFooter from "./InvoiceFooter";
-import { InvoiceProps } from "../../interfaces/invoice";
-import styles from "../../styles/Invoice/Invoice.module.css"
+import InvoiceHeader from "../InvoiceHeader/InvoiceHeader";
+import InvoiceBody from "../InvoiceBody/InvoiceBody";
+import InvoiceLineItems from "../InvoiceLineItems/InvoiceLineItems";
+import InvoiceFooter from "../InvoiceFooter/InvoiceFooter";
+import { InvoiceProps } from "../../../interfaces/invoice";
+import styles from "./Invoice.module.css"
 
 const Invoice = ({ invoiceData }: { invoiceData: InvoiceProps }) => {
   return (

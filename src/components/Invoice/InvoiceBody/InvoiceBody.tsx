@@ -1,14 +1,14 @@
 import React from "react";
 import { Box, Stack } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import InvoiceAddress from "./InvoiceAddress";
-import InvoiceData from "./InvoiceData";
-import { Address } from "../../interfaces/address";
+import InvoiceAddress from "../InvoiceAddress/InvoiceAddress";
+import InvoiceData from "../InvoiceData/InvoiceData";
+import { Address } from "../../../interfaces/address";
 import {
   calculateDueDate,
   calculateOverDueDays,
-} from "../../utils/DateFunctions";
-import styles from "../../styles/Invoice/InvoiceBody.module.css";
+} from "../../../utils/DateFunctions";
+import styles from "./InvoiceBody.module.css";
 
 interface InvoiceBodyProps {
   toAddress: Address[];

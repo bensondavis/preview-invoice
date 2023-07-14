@@ -6,7 +6,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Stack from "@mui/material/Stack";
 import LanguageIcon from "@mui/icons-material/Language";
-import styles from "../styles/Localization.module.css";
+import styles from "./Localization.module.css";
 
 
 const Localization = () => {

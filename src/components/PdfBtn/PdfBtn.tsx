@@ -1,6 +1,6 @@
 import Button from "@mui/material/Button";
 import DownloadIcon from "@mui/icons-material/Download";
-import styles from "../styles/PdfBtn.module.css";
+import styles from "./PdfBtn.module.css";
 
 interface PdfBtnProps {
   link: string;

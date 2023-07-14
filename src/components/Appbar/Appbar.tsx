@@ -1,15 +1,15 @@
 "use client";
 
 import React from "react";
-import styles from "../styles/Appbar.module.css";
+import styles from "./Appbar.module.css";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
-import { ccyFormat } from "../utils/Numerics";
+import { ccyFormat } from "../../utils/Numerics";
 import { useTranslations } from "next-intl";
-import Localization from "./Localization";
-import PdfBtn from "./PdfBtn";
+import Localization from "../Localization/Localization";
+import PdfBtn from "../PdfBtn/PdfBtn";
 
 interface AppbarProps {
   amount: number;

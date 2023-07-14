@@ -1,5 +1,5 @@
 .btn {
-  position: absolute;
+  position: absolute !important;
   top: 50%;
   right: 115px;
   transform: translateY(-50%);

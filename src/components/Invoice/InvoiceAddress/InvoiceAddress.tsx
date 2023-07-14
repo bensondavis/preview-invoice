@@ -1,9 +1,9 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { Address } from "../../interfaces/address";
+import { Address } from "../../../interfaces/address";
 import { useTranslations } from "next-intl";
-import styles from "../../styles/Invoice/InvoiceAddress.module.css";
+import styles from "./InvoiceAddress.module.css";
 
 interface InvoiceAddressProps {
   title: string;

@@ -6,10 +6,10 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
-import { ccyFormat } from "../../utils/Numerics";
-import { LineItems } from "../../interfaces/lineItems";
+import { ccyFormat } from "../../../utils/Numerics";
+import { LineItems } from "../../../interfaces/lineItems";
 import { useTranslations } from "next-intl";
-import styles from "../../styles/Invoice/InvoiceLineItem.module.css";
+import styles from "./InvoiceLineItem.module.css";
 
 interface InvoiceLineItemsProps {
   lineItems: LineItems[];
