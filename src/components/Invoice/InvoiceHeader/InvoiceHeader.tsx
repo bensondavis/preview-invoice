@@ -14,7 +14,7 @@ const InvoiceHeader = () => {
   return (
     <div className={styles.box}>
       <div className={styles.stack}>
-        <h1 className={styles.title}>{i18n("TAX INVOICE")}</h1>
+        <h1 className={styles.title}>{i18n("taxInvoice")}</h1>
 
         <Link href={Logos.fromCompanyLogo.link}>
           <Image src={Logos.fromCompanyLogo.img} alt="logo" className={styles.img} />
