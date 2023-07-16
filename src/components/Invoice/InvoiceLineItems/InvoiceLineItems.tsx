@@ -1,97 +1,85 @@
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
+// import Table from "@mui/material/Table";
+// import TableBody from "@mui/material/TableBody";
+// import TableCell from "@mui/material/TableCell";
+// import TableContainer from "@mui/material/TableContainer";
+// import TableHead from "@mui/material/TableHead";
+// import TableRow from "@mui/material/TableRow";
+// import Box from "@mui/material/Box";
+// import Paper from "@mui/material/Paper";
 import { ccyFormat } from "../../../utils/Numerics";
 import { LineItems } from "../../../interfaces/lineItems";
 import { useTranslations } from "next-intl";
 import styles from "./InvoiceLineItem.module.css";
+import TableContainer from "@/components/Table/TableContainer/TableContainer";
+import TableCell from "@/components/Table/TableCell/TableCell";
+import TableRow from "@/components/Table/TableRow/TableRow";
 
 interface InvoiceLineItemsProps {
   lineItems: LineItems[];
-  net: number;
-  tax: number;
-  gross: number;
 }
 
-const InvoiceLineItems = ({
-  lineItems,
-  net,
-  tax,
-  gross,
-}: InvoiceLineItemsProps) => {
+const InvoiceLineItems = ({ lineItems }: InvoiceLineItemsProps) => {
   const i18n = useTranslations("Invoice");
 
   return (
-    <Box sx={{ width: "100%", py: 3 }}>
-      <TableContainer component={Paper} elevation={0}>
-        <Table sx={{ width: { md: "95%", xs: "100%", sm: "95%" }, mx: "auto" }}>
-          <TableHead>
+    <div className={styles.container}>
+      <TableContainer>
+        <table className={styles.table}>
+          <thead>
             <TableRow>
-              <TableCell className={styles["align-left"]}>
-                <b>{i18n("Description")}</b>
+              <TableCell className={styles.desc}>
+                <p>
+                  <b>{i18n("description")}</b>
+                </p>
               </TableCell>
-              <TableCell>
-                <b>{i18n("Quantity")}</b>
+              <TableCell numeric className={styles.quantity}>
+                <p>
+                  <b>{i18n("quantity")}</b>
+                </p>
               </TableCell>
-              <TableCell>
-                <b>{i18n("Unit Price")}</b>
+              <TableCell numeric className={styles.price}>
+                <p>
+                  <b>{i18n("unitPrice")}</b>
+                </p>
               </TableCell>
-              <TableCell>
-                <b>{i18n("TAX")}</b>
+              <TableCell numeric className={styles.tax}>
+                <p>
+                  <b>{i18n("tax")}</b>
+                </p>
               </TableCell>
-              <TableCell>
-                <b>{i18n("Amount")} EUR</b>
+              <TableCell numeric className={styles.amount}>
+                <p>
+                  <b>{i18n("amount")} EUR</b>
+                </p>
               </TableCell>
             </TableRow>
-          </TableHead>
-          <TableBody>
+          </thead>
+          <tbody>
             {lineItems.map((data, index) => (
               <TableRow key={index}>
-                <TableCell className={styles["align-left"]}>
-                  {data.name}
+                <TableCell className={styles.desc}>
+                  <p>{data.name}</p>
                 </TableCell>
-                <TableCell>{data.quantity}</TableCell>
-                <TableCell>{data.unitPrice}</TableCell>
-                <TableCell>{data.tax}%</TableCell>
-                <TableCell>
-                  <b>{ccyFormat(data.amount)}</b>
+                <TableCell numeric className={styles.quantity}>
+                  <p>{data.quantity}</p>
+                </TableCell>
+                <TableCell numeric className={styles.price}>
+                  <p>{ccyFormat(data.unitPrice)}</p>
+                </TableCell>
+                <TableCell numeric className={styles.tax}>
+                  <p>{data.tax}%</p>
+                </TableCell>
+                <TableCell numeric className={styles.amount}>
+                  <p>
+                    <b>{ccyFormat(data.amount)}</b>
+                  </p>
                 </TableCell>
               </TableRow>
             ))}
-            <TableRow>
-              <TableCell
-                rowSpan={3}
-                colSpan={3}
-                className={styles["bb-none"]}
-              />
-              <TableCell className={styles["align-left"]} colSpan={1}>
-                {i18n("Subtotal")}
-              </TableCell>
-              <TableCell>{ccyFormat(net)}</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell className={styles["align-left"]} colSpan={1}>
-                {i18n("Total")} {i18n("TAX")}{" "}
-              </TableCell>
-              <TableCell>{ccyFormat(tax)}</TableCell>
-            </TableRow>
-            <TableRow selected>
-              <TableCell className={styles["summary-label"]} colSpan={1}>
-                <b>{i18n("Amount Due")} EUR</b>
-              </TableCell>
-              <TableCell className={styles.summary}>
-                <b>{ccyFormat(gross)}</b>
-              </TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
+          </tbody>
+        </table>
       </TableContainer>
-    </Box>
+    </div>
   );
 };
 

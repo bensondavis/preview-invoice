@@ -13,10 +13,7 @@ import { InvoiceProps } from "../../interfaces/invoice";
 import { data } from "../../mock-data/testInvoice";
 import Image from "next/image";
 // import isInvoice from "../../utils/isInvoice";
-import { Stack, Box } from "@mui/material";
 import styles from "./App.module.css";
-import { ThemeProvider } from "@mui/material/styles";
-import theme from "../../theme/theme";
 import Link from "next/link";
 import Loading from "@/components/Loading/Loading";
 
@@ -31,34 +28,27 @@ function App() {
   }, []);
 
   return (
-    <ThemeProvider theme={theme}>
-      <Box className={styles.App}>
-        {invoice ? (
-          <>
-            <Appbar
-              amount={invoice.gross}
-              due={calculateOverDueDays(
-                calculateDueDate(invoice.issued, invoice.due)
-              )}
-              pdfLink={invoice.pdfDownloadLink}
-            />
-            <Invoice invoiceData={invoice} />
+    <div className={styles.App}>
+      {invoice ? (
+        <>
+          <Appbar
+            amount={invoice.gross}
+            due={calculateOverDueDays(
+              calculateDueDate(invoice.issued, invoice.due)
+            )}
+          />
+          <Invoice invoiceData={invoice} />
 
-            <Stack
-              className={styles.footer}
-              alignItems={"center"}
-              justifyContent={"center"}
-            >
-              <Link href={Logos.companyLogo.link}>
-                <Image src={Logos.companyLogo.img} alt="logo" />
-              </Link>
-            </Stack>
-          </>
-        ) : (
-          <Loading />
-        )}
-      </Box>
-    </ThemeProvider>
+          <div className={styles.footer}>
+            <Link href={Logos.companyLogo.link}>
+              <Image src={Logos.companyLogo.img} alt="logo" className={styles.img} />
+            </Link>
+          </div>
+        </>
+      ) : (
+        <Loading />
+      )}
+    </div>
   );
 }
 

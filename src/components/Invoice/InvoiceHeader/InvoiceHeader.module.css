@@ -1,6 +1,6 @@
 .title {
-  font-size: 18px !important;
-  font-weight: 700 !important;
+  font-size: 18px;
+  font-weight: 700;
   /* margin-left: 4%; */
 }
 
@@ -9,8 +9,20 @@
 }
 
 .stack {
-  width: 95%;
+  /* width: 95%; */
   margin: 0 auto;
-  padding: 32px 0;
-  
+  /* padding: 32px 0; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 5px;
+  padding: 3% 3%;
+  flex-wrap: nowrap;
 }
+
+.img {
+  max-width: 100%;
+  height: auto;
+}
+

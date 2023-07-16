@@ -1,9 +1,10 @@
 import React from "react";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
+// import Grid from "@mui/material/Grid";
+// import Typography from "@mui/material/Typography";
 import { Address } from "../../../interfaces/address";
 import { useTranslations } from "next-intl";
-import styles from "./InvoiceAddress.module.css";
+// import styles from "./InvoiceAddress.module.css";
+import GridContainer from "@/components/GridContainer/GridContainer";
 
 interface InvoiceAddressProps {
   title: string;
@@ -16,34 +17,19 @@ const InvoiceAddress = ({ title, address, addresses }: InvoiceAddressProps) => {
   const AddressData = addresses ? addresses : [address];
 
   return (
-    <Grid container className={styles.mt} rowSpacing={2}>
+    <GridContainer columnCount={2}>
       {AddressData.map((data, index) => (
         <React.Fragment key={index}>
-          <Grid item xs={6}>
-            <Typography>
-              <b>{index === 0 ? i18n(title) : ""}</b>
-            </Typography>
-          </Grid>
-          <Grid item xs={6}>
-            <Grid item xs={12}>
-              <Typography>{data?.name}</Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <Typography>{data?.place}</Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <Typography>{data?.state}</Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <Typography>{data?.zipCode}</Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <Typography>{data?.country}</Typography>
-            </Grid>
-          </Grid>
+          <p >
+            <b>{index === 0 ? i18n(title) : ""}</b>
+          </p>
+          <p >
+            {data?.name} <br /> {data?.place} <br /> {data?.state} <br />{" "}
+            {data?.zipCode} <br /> {data?.country}
+          </p>
         </React.Fragment>
       ))}
-    </Grid>
+    </GridContainer>
   );
 };
 

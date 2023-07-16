@@ -1,18 +1,99 @@
-.align-left {
-  text-align: left !important;
+.container {
+  width: 100%;
+  /* padding: 4% 0; */
+  padding-top: 4%;
 }
 
-.summary {
-  font-size: 24px !important;
-  border-bottom: none !important;
+.table {
+  width: 100%;
+  margin: 0 auto;
+  border-spacing: 0;
+  overflow-x: auto;
+  padding: 0 3%;
 }
 
-.summary-label {
-  font-size: 14px !important;
-  text-align: left !important;
-  border-bottom: none !important;
-}
+@media screen and (max-width: 768px) {
+  .table {
+    width: 100%;
+  }
 
-.bb-none {
-  border-bottom: none !important;
+  /* table head style */
+  .table thead .desc {
+    width: calc(70% - 3%);
+    min-width: 45%;
+    padding: 4% 0 4% 3%;
+  }
+
+  .table thead .amount {
+    width: calc(30% - 3%);
+    padding: 4% 3% 4% 0;
+  }
+
+  .table thead .quantity {
+    display: none;
+  }
+
+  .table thead .price {
+    display: none;
+  }
+
+  .table thead .tax {
+    display: none;
+  }
+
+  /* table body style */
+  .table tbody .quantity {
+    order: 4;
+    display: block;
+    width: auto;
+    color: #7e90a2;
+    padding: 4%  3%;
+  }
+
+  .table tbody .desc {
+    order: 2;
+    width: calc(70% - 3%);
+    min-width: 45%;
+    display: block;
+    padding: 4% 0 0 3%;
+  }
+
+  .table tbody .amount {
+    order: 3;
+    font-weight: bold;
+    display: block;
+    width: calc(30% - 3%);
+    padding: 4% 3% 0 0;
+  }
+
+  .table tbody .price {
+    order: 5;
+    display: block;
+    text-align: left;
+    width: auto;
+    color: #7e90a2;
+    padding: 4% 4% 4% 0;
+  }
+
+  .table tbody .price p::before {
+    content: "x";
+    padding: 0 5px;
+  }
+
+  .table tbody .tax {
+    order: 6;
+    display: block;
+    width: 100%;
+    text-align: left !important;
+    color: #7e90a2;
+    padding: 0 0 4% 3%;
+  }
+
+  .table tbody .tax p::before {
+    content: "Tax: ";
+  }
+
+  .sm-x {
+    display: block;
+  }
 }

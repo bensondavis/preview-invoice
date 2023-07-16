@@ -1,0 +1,7 @@
+@media screen and (max-width: 768px) {
+  .tr {
+    display: flex;
+    border-bottom: 1px solid #dddddddd;
+    flex-wrap: wrap;
+  }
+}
