@@ -34,7 +34,6 @@ const Invoice = ({ invoiceData }: { invoiceData: InvoiceProps }) => {
       <Divider />
       <InvoiceFooter
         companyName={invoiceData.toAddress[0].name}
-        pdfLink={invoiceData.pdfDownloadLink}
       />
     </div>
   );

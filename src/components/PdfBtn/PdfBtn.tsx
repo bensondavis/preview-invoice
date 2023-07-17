@@ -5,12 +5,13 @@ import Image from "next/image";
 
 interface PdfBtnProps {
   link: string;
+  className?: string
 }
 
-const PdfBtn = ({ link }: PdfBtnProps) => {
+const PdfBtn = ({ link, className }: PdfBtnProps) => {
   return (
     <Link href={link}>
-      <Image src={pdfDwnldSvg} alt="pdf download" className={styles.img} />
+      <Image src={pdfDwnldSvg} alt="pdf download" className={styles.img + " " + className} />
     </Link>
   );
 };

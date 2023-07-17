@@ -16,6 +16,7 @@ import Image from "next/image";
 import styles from "./App.module.css";
 import Link from "next/link";
 import Loading from "@/components/Loading/Loading";
+import Footer from "@/components/Footer/Footer";
 
 function App() {
   const [invoice, setInvoice] = useState<InvoiceProps | undefined>();
@@ -36,14 +37,11 @@ function App() {
             due={calculateOverDueDays(
               calculateDueDate(invoice.issued, invoice.due)
             )}
+            pdfLink={invoice.pdfDownloadLink}
           />
           <Invoice invoiceData={invoice} />
 
-          <div className={styles.footer}>
-            <Link href={Logos.companyLogo.link}>
-              <Image src={Logos.companyLogo.img} alt="logo" className={styles.img} />
-            </Link>
-          </div>
+          <Footer />
         </>
       ) : (
         <Loading />
