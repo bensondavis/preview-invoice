@@ -14,7 +14,7 @@ import InvoiceSummary from "../InvoiceSummary/InvoiceSummary";
 const Invoice = ({ invoiceData }: { invoiceData: InvoiceProps }) => {
   return (
     <div className={styles.container}>
-      <InvoiceHeader />
+      <InvoiceHeader paymentLink={invoiceData.paymentLink} />
       <Divider />
       <InvoiceBody
         toAddress={invoiceData.toAddress}
