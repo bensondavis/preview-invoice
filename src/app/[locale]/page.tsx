@@ -38,6 +38,7 @@ function App() {
               calculateDueDate(invoice.issued, invoice.due)
             )}
             pdfLink={invoice.pdfDownloadLink}
+            paymentLink={invoice.paymentLink}
           />
           <Invoice invoiceData={invoice} />
 

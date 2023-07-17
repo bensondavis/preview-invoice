@@ -14,9 +14,10 @@ interface AppbarProps {
   amount: number;
   due: number;
   pdfLink: string;
+  paymentLink: string; 
 }
 
-const Appbar = ({ amount, due, pdfLink }: AppbarProps) => {
+const Appbar = ({ amount, due, pdfLink, paymentLink }: AppbarProps) => {
   const i18n = useTranslations("Invoice");
   const searchParams = useSearchParams();
   const pay = searchParams.get("pay") === "true";
@@ -40,7 +41,7 @@ const Appbar = ({ amount, due, pdfLink }: AppbarProps) => {
 
       {pay ? (
         <div className={styles["paybtn-container"]}>
-          <PayBtn link="" className={styles.paybtn} />
+          <PayBtn link={paymentLink} className={styles.paybtn} />
         </div>
       ) : null}
 
