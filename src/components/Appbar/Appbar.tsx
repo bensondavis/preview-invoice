@@ -2,24 +2,24 @@
 
 import React from "react";
 import styles from "./Appbar.module.css";
-// import Box from "@mui/material/Box";
-// import Paper from "@mui/material/Paper";
-// import Typography from "@mui/material/Typography";
-// import Stack from "@mui/material/Stack";
 import { ccyFormat } from "../../utils/Numerics";
 import { useTranslations } from "next-intl";
 // import Localization from "../Localization/Localization";
 import PdfBtn from "../PdfBtn/PdfBtn";
-// import PdfBtn from "../PdfBtn/PdfBtn";
+import PayBtn from "../PayBtn/PayBtn";
+
+import { useSearchParams } from "next/navigation";
 
 interface AppbarProps {
   amount: number;
   due: number;
-  pdfLink: string
+  pdfLink: string;
 }
 
 const Appbar = ({ amount, due, pdfLink }: AppbarProps) => {
   const i18n = useTranslations("Invoice");
+  const searchParams = useSearchParams();
+  const pay = searchParams.get("pay") === "true";
 
   return (
     <div className={styles.Appbar}>
@@ -37,6 +37,12 @@ const Appbar = ({ amount, due, pdfLink }: AppbarProps) => {
           </div>
         ) : null}
       </div>
+
+      {pay ? (
+        <div className={styles["paybtn-container"]}>
+          <PayBtn link="" className={styles.paybtn} />
+        </div>
+      ) : null}
 
       {/* <Localization /> */}
       <PdfBtn link={pdfLink} className={styles.btn} />

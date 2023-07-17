@@ -29,10 +29,3 @@
   height: auto;
 }
 
-.payment-title {
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  height: auto;
-}
-

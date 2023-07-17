@@ -3,12 +3,13 @@ import Link from "next/link";
 
 interface PayBtnProps {
   link: string;
+  className?: string;
 }
 
-const PayBtn = ({ link }: PayBtnProps) => {
+const PayBtn = ({ link, className }: PayBtnProps) => {
   return (
     <Link href={link} className={styles.link}>
-      <button className={styles.button}>Pay Now</button>
+      <button className={styles.button + " " + className}>Pay Now</button>
     </Link>
   );
 };
