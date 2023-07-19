@@ -15,7 +15,7 @@ const InvoiceData = ({ title, value, overDue }: InvoiceDataProps) => {
   const i18n = useTranslations("Invoice");
 
   return (
-    <GridContainer columnCount={2}>
+    <GridContainer columnTemplate="50% 50%">
       <p>
         <b>{i18n(title)}</b>
       </p>

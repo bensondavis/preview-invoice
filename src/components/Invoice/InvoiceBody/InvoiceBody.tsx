@@ -31,7 +31,7 @@ const InvoiceBody = ({
   return (
     <div className={styles.container}>
       <div className={styles["content-box"]}>
-        <GridContainer columnCount={1}>
+        <GridContainer columnTemplate="100%">
           <InvoiceAddress title="to" addresses={toAddress} />
           <InvoiceData title="invoiceNumber" value={invoiceNumber} />
           <InvoiceData title="reference" value={reference} />
@@ -45,7 +45,7 @@ const InvoiceBody = ({
             overDue={calculateOverDueDays(calculateDueDate(issued, due))}
           />
         </GridContainer>
-        <GridContainer columnCount={1}>
+        <GridContainer columnTemplate="100%">
           <InvoiceAddress title="from" address={fromAddress} />
         </GridContainer>
       </div>

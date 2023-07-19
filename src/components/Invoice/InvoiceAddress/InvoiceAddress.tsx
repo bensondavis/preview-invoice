@@ -17,13 +17,13 @@ const InvoiceAddress = ({ title, address, addresses }: InvoiceAddressProps) => {
   const AddressData = addresses ? addresses : [address];
 
   return (
-    <GridContainer columnCount={2}>
+    <GridContainer columnTemplate="50% 50%">
       {AddressData.map((data, index) => (
         <React.Fragment key={index}>
-          <p >
+          <p>
             <b>{index === 0 ? i18n(title) : ""}</b>
           </p>
-          <p >
+          <p>
             {data?.name} <br /> {data?.place} <br /> {data?.state} <br />{" "}
             {data?.zipCode} <br /> {data?.country}
           </p>
