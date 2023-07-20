@@ -1,5 +1,4 @@
-// import CircularProgress from '@mui/material/CircularProgress';
-// import Box from '@mui/material/Box';
+import React from "react";
 import styles from "./Loading.module.css";
 
 export default function Loading() {

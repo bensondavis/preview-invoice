@@ -1,9 +1,6 @@
 import React from "react";
-// import Grid from "@mui/material/Grid";
-// import Typography from "@mui/material/Typography";
 import { Address } from "../../../interfaces/address";
 import { useTranslations } from "next-intl";
-// import styles from "./InvoiceAddress.module.css";
 import GridContainer from "@/components/GridContainer/GridContainer";
 
 interface InvoiceAddressProps {

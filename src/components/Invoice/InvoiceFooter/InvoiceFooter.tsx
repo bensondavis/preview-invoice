@@ -1,6 +1,4 @@
 import React from "react";
-// import Box from "@mui/material/Box";
-// import Typography from "@mui/material/Typography";
 import styles from "./InvoiceFooter.module.css";
 
 interface InvoiceFooterProps {

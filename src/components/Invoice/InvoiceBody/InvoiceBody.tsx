@@ -1,6 +1,4 @@
 import React from "react";
-// import { Box, Stack } from "@mui/material";
-// import Grid from "@mui/material/Grid";
 import InvoiceAddress from "../InvoiceAddress/InvoiceAddress";
 import InvoiceData from "../InvoiceData/InvoiceData";
 import { Address } from "../../../interfaces/address";

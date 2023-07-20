@@ -1,7 +1,7 @@
+import React from "react";
 import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
 import { usePathname } from "next-intl/client";
-// import LanguageIcon from "@mui/icons-material/Language";
 import styles from "./Localization.module.css";
 import globeSvg from "@/Assets/world-globe-line-icon.svg";
 import Image from "next/image";

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-// import { Box, Divider } from "@mui/material";
 import InvoiceHeader from "../InvoiceHeader/InvoiceHeader";
 import InvoiceBody from "../InvoiceBody/InvoiceBody";
 import InvoiceLineItems from "../InvoiceLineItems/InvoiceLineItems";

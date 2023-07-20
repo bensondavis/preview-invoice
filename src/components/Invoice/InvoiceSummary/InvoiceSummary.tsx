@@ -1,3 +1,4 @@
+import React from "react";
 import TableCell from "@/components/Table/TableCell/TableCell";
 import TableContainer from "@/components/Table/TableContainer/TableContainer";
 import TableRow from "@/components/Table/TableRow/TableRow";

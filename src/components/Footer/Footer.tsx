@@ -1,8 +1,8 @@
+import React from "react";
 import styles from "./Footer.module.css";
 import Logos from "@/config/logoConfig";
 import Link from "next/link";
 import Image from "next/image";
-import Localization from "../Localization/Localization";
 
 const Footer = () => {
   return (

@@ -1,6 +1,4 @@
 import React from "react";
-// import Grid from "@mui/material/Grid";
-// import Typography from "@mui/material/Typography";
 import { useTranslations } from "next-intl";
 import styles from "./InvoiceData.module.css";
 import GridContainer from "@/components/GridContainer/GridContainer";
