@@ -26,7 +26,8 @@ const Appbar = ({ amount, due, pdfLink, paymentLink }: AppbarProps) => {
     <div className={styles.Appbar}>
       <div className={styles.summary}>
         <div className={styles["total-currency"]}>
-          <h2 className={styles.total}>{ccyFormat(amount)}</h2>
+          {/* <h2 className={styles.total}>{ccyFormat(amount)}</h2> */}
+          <h2 className={styles.total}>{Intl.NumberFormat().format(amount)}</h2>
           <h3 className={styles.currency}>EUR</h3>
         </div>
 

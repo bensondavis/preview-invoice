@@ -3,8 +3,9 @@ import TableCell from "@/components/Table/TableCell/TableCell";
 import TableContainer from "@/components/Table/TableContainer/TableContainer";
 import TableRow from "@/components/Table/TableRow/TableRow";
 import { ccyFormat } from "@/utils/Numerics";
-import { useTranslations } from "next-intl";
+import { useTranslations, useFormatter } from "next-intl";
 import styles from "./InvoiceSummary.module.css";
+import { format } from "path";
 
 interface InvoiceSummaryProps {
   net: number;
@@ -14,6 +15,7 @@ interface InvoiceSummaryProps {
 
 const InvoiceSummary = ({ net, tax, gross }: InvoiceSummaryProps) => {
   const i18n = useTranslations("Invoice");
+  const format = useFormatter();
   return (
     <div className={styles.container}>
       <TableContainer>
@@ -45,7 +47,8 @@ const InvoiceSummary = ({ net, tax, gross }: InvoiceSummaryProps) => {
               </TableCell>
               <TableCell numeric className={styles.summary}>
                 <p>
-                  <b>{ccyFormat(gross)}</b>
+                  {/* <b>{ccyFormat(gross)}</b> */}
+                  <b>{Intl.NumberFormat().format(gross)}</b>
                 </p>
               </TableCell>
             </TableRow>
