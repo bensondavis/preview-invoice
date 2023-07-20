@@ -37,7 +37,7 @@ const testInvoice: InvoiceProps = {
   due: 12,
   net: 2944,
   tax: 736,
-  gross: 3680.00,
+  gross: 3654,
   lineItems: [
     {
       name: "2-Day Workshop Pass w. Hotel - Early Bird",
