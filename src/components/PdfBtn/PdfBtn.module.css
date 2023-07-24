@@ -1,6 +1,4 @@
-.btn {
-  position: absolute !important;
-  top: 50%;
-  right: 115px;
-  transform: translateY(-50%);
+.img {
+  width: 30px;
+  height: auto;
 }

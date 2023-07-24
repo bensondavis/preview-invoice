@@ -1,0 +1,24 @@
+.td {
+  font-size: inherit;
+  font-family: inherit;
+  margin: 0;
+  line-height: 1.43;
+  padding: 16px;
+  width: fit-content;
+  border-bottom: 1px solid #dddddddd;
+  display: table-cell;
+}
+
+.td b{
+  font-weight: bold;
+}
+
+.td p{
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .td {
+    border-bottom: none;
+  }
+}

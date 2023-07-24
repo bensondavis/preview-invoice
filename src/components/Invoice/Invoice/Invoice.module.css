@@ -4,4 +4,23 @@
   margin: 0 auto;
   background-color: white;
   border: 1px solid #bfc8d1;
+  width: 85%;
+}
+
+@media screen and (max-width: 768px) {
+  .container{
+    width: calc(100% - 2px);
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 991px) {
+  .container {
+    width: 93%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    width: 85%;
+  }
 }

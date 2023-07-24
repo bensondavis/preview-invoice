@@ -1,21 +1,22 @@
 {
   "Invoice": {
-    "To": "To",
-    "From": "From",
-    "Invoice Number" : "Invoice Number",
-    "Reference": "Reference",
-    "Issued": "Issued",
-    "Due": "Due",
-    "Description": "Description",
-    "Quantity": "Quantity",
-    "Unit Price": "Unit Price",
-    "TAX": "TAX",
-    "Amount": "Amount",
-    "TAX INVOICE": "TAX INVOICE",
+    "to": "To",
+    "from": "From",
+    "invoiceNumber" : "Invoice Number",
+    "reference": "Reference",
+    "issued": "Issued",
+    "due": "Due",
+    "description": "Description",
+    "quantity": "Quantity",
+    "unitPrice": "Unit Price",
+    "tax": "TAX",
+    "amount": "Amount",
+    "taxInvoice": "TAX INVOICE",
     "days": "Days",
     "overdue": "overdue",
-    "Subtotal": "Subtotal",
-    "Total": "Total",
-    "Amount Due": "Amount Due"
+    "subtotal": "Subtotal",
+    "total": "Total",
+    "amountDue": "Amount Due",
+    "daysOverdue": "{overdueDays, number} days overdue"
   }
 }

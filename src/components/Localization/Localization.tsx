@@ -1,34 +1,33 @@
+import React from "react";
 import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
 import { usePathname } from "next-intl/client";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Stack from "@mui/material/Stack";
-import LanguageIcon from "@mui/icons-material/Language";
 import styles from "./Localization.module.css";
-
+import globeSvg from "@/Assets/world-globe-line-icon.svg";
+import Image from "next/image";
 
 const Localization = () => {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
 
-  const handleChange = (event: SelectChangeEvent) => {
-    router.replace(`/${event.target.value}${pathname}`);
+  const handleChange = (value: string) => {
+    router.replace(`/${value}${pathname}`);
   };
 
   return (
-    <Stack className={styles.select} direction={"row"}>
-        <LanguageIcon />
-        <FormControl variant="standard" size="small">
-          <Select defaultValue={locale} onChange={handleChange}>
-            <MenuItem value={"en"}>EN</MenuItem>
-            <MenuItem value={"de"}>DE</MenuItem>
-          </Select>
-        </FormControl>
-      </Stack>
-  )
-}
+    <div className={styles.container}>
+      <Image src={globeSvg} alt="globe" className={styles.img} />
+      <select
+        defaultValue={locale}
+        onChange={(e) => handleChange(e.target.value)}
+        className={styles.select}
+      >
+        <option value="en">en</option>
+        <option value="de">de</option>
+      </select>
+    </div>
+  );
+};
 
 export default Localization;

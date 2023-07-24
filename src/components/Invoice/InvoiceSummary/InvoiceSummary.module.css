@@ -1,0 +1,28 @@
+.summary {
+  font-size: 24px !important;
+  border-bottom: none !important;
+}
+
+.summary-label {
+  font-size: 14px !important;
+  text-align: left !important;
+  border-bottom: none !important;
+}
+
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 4%;
+}
+
+.table {
+  border-spacing: 0;
+  padding-right: 3%;
+  margin-left: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}

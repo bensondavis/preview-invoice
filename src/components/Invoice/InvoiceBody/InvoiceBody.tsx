@@ -1,6 +1,4 @@
 import React from "react";
-import { Box, Stack } from "@mui/material";
-import Grid from "@mui/material/Grid";
 import InvoiceAddress from "../InvoiceAddress/InvoiceAddress";
 import InvoiceData from "../InvoiceData/InvoiceData";
 import { Address } from "../../../interfaces/address";
@@ -9,6 +7,7 @@ import {
   calculateOverDueDays,
 } from "../../../utils/DateFunctions";
 import styles from "./InvoiceBody.module.css";
+import GridContainer from "@/components/GridContainer/GridContainer";
 
 interface InvoiceBodyProps {
   toAddress: Address[];
@@ -28,44 +27,27 @@ const InvoiceBody = ({
   due,
 }: InvoiceBodyProps) => {
   return (
-    <Box className={styles.container}>
-      <Stack
-        direction={{ xs: "column", sm: "row", md: "row" }}
-        className={styles["content-box"]}
-        alignItems={"flex-start"}
-        justifyContent={"flex-start"}
-      >
-        <Grid container spacing={3} sx={{ width: "100%" }}>
-          <Grid item xs={12}>
-            <InvoiceAddress title="To" addresses={toAddress} />
-          </Grid>
-          <Grid item xs={12}>
-            <InvoiceData title="Invoice Number" value={invoiceNumber} />
-          </Grid>
-          <Grid item xs={12}>
-            <InvoiceData title="Reference" value={reference} />
-          </Grid>
-          <Grid item xs={12}>
-            <InvoiceData
-              title="Issued"
-              value={issued.toISOString().split("T")[0]}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <InvoiceData
-              title="Due"
-              value={calculateDueDate(issued, due)}
-              overDue={calculateOverDueDays(calculateDueDate(issued, due))}
-            />
-          </Grid>
-        </Grid>
-        <Grid container spacing={3} sx={{ width: "100%" }}>
-          <Grid item xs={12}>
-            <InvoiceAddress title="From" address={fromAddress} />
-          </Grid>
-        </Grid>
-      </Stack>
-    </Box>
+    <div className={styles.container}>
+      <div className={styles["content-box"]}>
+        <GridContainer columnTemplate="100%">
+          <InvoiceAddress title="to" addresses={toAddress} />
+          <InvoiceData title="invoiceNumber" value={invoiceNumber} />
+          <InvoiceData title="reference" value={reference} />
+          <InvoiceData
+            title="issued"
+            value={issued.toISOString().split("T")[0]}
+          />
+          <InvoiceData
+            title="due"
+            value={calculateDueDate(issued, due)}
+            overDue={calculateOverDueDays(calculateDueDate(issued, due))}
+          />
+        </GridContainer>
+        <GridContainer columnTemplate="100%">
+          <InvoiceAddress title="from" address={fromAddress} />
+        </GridContainer>
+      </div>
+    </div>
   );
 };
 

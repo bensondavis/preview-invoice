@@ -35,9 +35,9 @@ const testInvoice: InvoiceProps = {
   reference: "5C42D66DE - BETALT",
   issued: new Date("2023-03-29"),
   due: 12,
-  net: 2944.0,
-  tax: 736.0,
-  gross: 3680.0,
+  net: 2944,
+  tax: 736,
+  gross: 3654,
   lineItems: [
     {
       name: "2-Day Workshop Pass w. Hotel - Early Bird",

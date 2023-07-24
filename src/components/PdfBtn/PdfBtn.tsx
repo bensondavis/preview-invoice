@@ -1,23 +1,23 @@
-import Button from "@mui/material/Button";
-import DownloadIcon from "@mui/icons-material/Download";
+import React from "react";
 import styles from "./PdfBtn.module.css";
+import pdfDwnldSvg from "@/Assets/download-pdf-icon.svg";
+import Link from "next/link";
+import Image from "next/image";
 
 interface PdfBtnProps {
   link: string;
+  className?: string;
 }
 
-const PdfBtn = ({ link }: PdfBtnProps) => {
+const PdfBtn = ({ link, className }: PdfBtnProps) => {
   return (
-    <Button
-      href={link}
-      startIcon={<DownloadIcon />}
-      variant="outlined"
-      color="primary"
-      size="small"
-      className={styles.btn}
-    >
-      PDF
-    </Button>
+    <Link href={link}>
+      <Image
+        src={pdfDwnldSvg}
+        alt="pdf download"
+        className={styles.img + " " + className}
+      />
+    </Link>
   );
 };
 

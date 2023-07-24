@@ -1,10 +1,12 @@
-.details {
-  font-size: 13px;
-  
-}
-
 body {
   font-size: 13px;
   background-color: #F5F9FF;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  min-width: 350px;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
 }

@@ -1,6 +1,4 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import styles from "./InvoiceFooter.module.css";
 
 interface InvoiceFooterProps {
@@ -9,11 +7,11 @@ interface InvoiceFooterProps {
 
 const InvoiceFooter = ({ companyName }: InvoiceFooterProps) => {
   return (
-    <Box className={styles.container}>
-      <Box className={styles.footer}>
-        <Typography className={styles.title}>{companyName}</Typography>
-      </Box>
-    </Box>
+    <div className={styles.container}>
+      <div className={styles.footer}>
+        <h3 className={styles.title}>{companyName}</h3>
+      </div>
+    </div>
   );
 };
 
